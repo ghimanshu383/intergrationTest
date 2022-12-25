@@ -12,7 +12,7 @@ jobs:
       - name: setup_node
         uses: actions/setup-node@v1
         with:
-          node-versino: '16.*'
+          node-version: '16.*'
       - name: adding dependencies
         run: npm ci 
       - name: running server
