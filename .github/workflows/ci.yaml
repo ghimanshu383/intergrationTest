@@ -1,0 +1,19 @@
+name: Continous integration
+
+on: 
+  pull_request:
+    branches: ['develop']
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup_node
+        uses: actions/setup-node@v1
+        with:
+          node-versino: '16.*'
+      - name: adding dependencies
+        run: npm ci 
+      - name: running server
+        run: npm start
