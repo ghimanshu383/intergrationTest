@@ -15,5 +15,3 @@ jobs:
           node-version: '16.*'
       - name: adding dependencies
         run: npm ci 
-      - name: running server
-        run: npm start
