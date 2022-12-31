@@ -1,23 +1,23 @@
-# name: Continous integration
+name: Continous integration
 
-# on: 
-#   pull_request:
-#     branches: ['develop']
-#   push:
-#     branches:
-#       - develop
+on: 
+  pull_request:
+    branches: ['develop']
+  push:
+    branches:
+      - develop
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-18.04
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: setup_node
-#         uses: actions/setup-node@v1
-#         with:
-#           node-version: '16.*'
-#       - name: adding dependencies
-#         run: npm ci 
-#       - name: build project
-#         if: ${{github.event_name=='push'}}
-#         run: npm run build
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup_node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.*'
+      - name: adding dependencies
+        run: npm ci 
+      - name: build project
+        if: ${{github.event_name=='push'}}
+        run: npm run build
