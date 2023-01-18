@@ -1,0 +1,19 @@
+name: ci_integration
+
+on: 
+  push:
+    branches:
+      - workflow
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  install_plugins:
+    runs-on: ubuntu-18.04
+    container:
+      image: node
+    steps:
+      - uses: actions/checkout@v1
+      - name: "Install"
+        run: npm ci

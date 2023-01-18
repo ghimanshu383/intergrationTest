@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend_deployment
+  template:
+    metadata:
+      labels:
+        app: backend_deployment
+    spec:
+      containers:
+        - name: Backend_container
+          image: himanshu383/react-backend
+          resources:
+            requests:
+              memory: "64Mi"
+            limits:
+              memory: '125MI'
+              cpu: "500m"
+    
+    
